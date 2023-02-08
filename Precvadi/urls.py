@@ -27,11 +27,11 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('myapp.urls')),
     path('compte/',include('compte.urls')),
-    #path('das/',include('das.urls')),
-    #path('foncier/',include('foncier.urls')),
-   # path('peche/',include('peche.urls')),
-    #path('education/',include('education.urls')),
-   # path('sante/',include('sante.urls'))
+    path('das/',include('das.urls')),
+    path('foncier/',include('foncier.urls')),
+    path('peche/',include('peche.urls')),
+    path('education/',include('education.urls')),
+    path('sante/',include('sante.urls'))
 ] 
 urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

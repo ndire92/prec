@@ -42,12 +42,12 @@ INSTALLED_APPS = [
     'myapp.apps.MyappConfig',
     'compte.apps.CompteConfig',
     'ckeditor',
-    #'das',
+    'das',
     'home',
-    #'foncier',
-    #'education',
-    #'peche',
-    #'sante',
+    'foncier',
+    'education',
+    'peche',
+    'sante',
    
 ]
 
@@ -204,3 +204,7 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGIN_REDIRECT_URL ='posts:tabview'
+LOGIN_URL = 'compte:login'

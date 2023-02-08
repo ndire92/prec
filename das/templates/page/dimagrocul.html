@@ -1,0 +1,497 @@
+{% extends 'layout/base.html'%}
+
+{% load static %}
+
+
+
+    <title>{% block title%}tab{%endblock%}</title>
+ </script>
+</head>
+
+
+<body >
+    <header>
+        {% include 'layout/partial/header.html' %}
+    </header>
+
+    {% block body  %}
+
+
+
+ <!-- Content Start -->
+        <div style= "padding:0%">
+            <!-- Navbar Start -->
+
+            <!-- Navbar End -->
+
+
+
+    <!-- JavaScript Libraries -->
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src=" {% static 'lib/easing/easing.min.js '%}"></script>
+    <script src=" {% static 'lib/waypoints/waypoints.min.js '%}"></script>
+    <script src=" {% static 'lib/owlcarousel/owl.carousel.min.js '%}"></script>
+    <script src=" {% static 'lib/tempusdominus/js/moment.min.js '%}"></script>
+    <script src=" {% static 'lib/tempusdominus/js/moment-timezone.min.js '%}"></script>
+    <script src=" {% static 'lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js '%}"></script>
+
+    <!-- Template Javascript -->
+    <!-- script src=" {% static 'js/main.js '%}"></script-->
+
+<!-- diagramme-->
+{% include 'layout/partial/chart.html'%}
+<body>
+
+    <div class="sidebar"style=" margin-top:0px">
+
+        <div class="dropdown">
+          <button class="mainmenubtn">Agriculture</button>
+          <div class="dropdown-child">
+
+            <a href="{% url 'das:dimagroassu' %}">AgroAssurance</a>
+            <a href="{% url 'das:dimagrocul' %}">AgroCulture</a>
+            <a href="{% url 'das:dimagrofin' %}">AgroFinance</a>
+            <a href="{% url 'das:dimagroorg' %}">AgroOrganisation</a>
+            <a href="{% url 'das:dimagroprod' %}">AgroProduction</a>
+
+           </div>
+        </div>
+        <div class="dropdown">
+          <button class="mainmenubtn">Foncier</button>
+          <div class="dropdown-child">
+
+            <a href="{% url 'foncier:DimFoncierGouvernanc' %}">FoncierGouvernanc</a>
+            <a href="{% url 'foncier:DimGeographie' %}">Geographie</a>
+            <!--a href="{% url 'foncier:FactFoncier' %}">Foncier</a-->
+
+           </div>
+        </div>
+
+        <div class="dropdown">
+          <button class="mainmenubtn">Peche</button>
+          <div class="dropdown-child">
+
+            <a href="{% url 'peche:dimpecart' %}">PecheArtisan</a>
+            <a href="{% url 'peche:dimpecass' %}">PecheAssure</a>
+            <a href="{% url 'peche:dimpecfin' %}">PecheFinance</a>
+            <a href="{% url 'peche:dimpecec' %}">PecheCommerce</a>
+
+           </div>
+        </div>
+
+
+
+
+         <div class="dropdown">
+          <button class="mainmenubtn">Education</button>
+          <div class="dropdown-child">
+
+
+            <a href="{% url 'education:DimEqui' %}">Equipements</a>
+            <a href="{% url 'education:DimGou' %}">Gouvernance</a>
+            <a href="{% url 'education:DimPer' %}">Perfomance</a>
+            <a href="{% url 'education:Dimp' %}">Personnel</a>
+             <a href="{% url 'education:dim_Access' %}">Access education</a>
+
+           </div>
+
+
+
+             </div>
+              <div class="dropdown">
+          <button class="mainmenubtn">Sante</button>
+          <div class="dropdown-child">
+
+            <a href="{% url 'sante:PlanificationFamiliale' %}">PlanificationFamiliale</a>
+           </div>
+        </div>
+          </div>
+
+
+
+
+     </div>
+    </div>
+
+        <div > </div >
+
+                        <div class="content" style =" margin:0 auto;
+     max-width: 700px;">
+                                <section class="hero is-dark is-fullheight">
+                                  <div class="hero-body">
+                                    <div class="container">
+                                      <div class="columns is-centered">
+
+                                        <div class="column is-5-tablet is-4-desktop is-3-widescreen">
+                                          <form method="POST" action="" class="box">
+                                            {% csrf_token %}
+
+                                            <h1 class="has-text-centered mb-5 is-size-3">Dimension Agriculture</h1>
+
+                                            <div class="field">
+                                              <label for="" class="label">Zone de production/culture</label>
+                                              <div class="control has-icons-left">
+                                                {{ form.ZonProd_Cult }}
+                                                <span class="icon is-small is-left">
+                                                  <i class="fa fa-user"></i>
+                                                </span>
+                                              </div>
+                                            </div>
+                                            <div class="field">
+                                              <label for="" class="label">Cultures pratiquées</label>
+                                              <div class="control has-icons-left">
+                                                {{ form.Cultur_Pratique  }}
+                                                <span class="icon is-small is-left">
+                                                  <i class="fa fa-user"></i>
+                                                </span>
+                                              </div>
+                                            </div>
+                                            <div class="field">
+                                              <label for="" class="label">Types de semences</label>
+                                              <div class="control has-icons-left">
+                                                {{ form.Type_Semence }}
+                                                <span class="icon is-small is-left">
+                                                  <i class="fa fa-user"></i>
+                                                </span>
+                                              </div>
+                                            </div>
+                                            <div class="field">
+                                              <label for="" class="label">Username</label>
+                                              <div class="control has-icons-left">
+                                                {{ form.CodeVarietesCultiv }}
+                                                <span class="icon is-small is-left">
+                                                  <i class="fa fa-user"></i>
+                                                </span>
+                                              </div>
+                                            </div>
+                                               <div class="field">
+                                              <label for="" class="label">Variétés cultivées</label>
+                                              <div class="control has-icons-left">
+                                                {{ form.VarieteCultive }}
+                                                <span class="icon is-small is-left">
+                                                  <i class="fa fa-user"></i>
+                                                </span>
+                                              </div>
+                                            </div>
+                                            <div class="field">
+                                              <label for="" class="label">Username</label>
+                                              <div class="control has-icons-left">
+                                                {{ form.Appro_Intrant_mat }}
+                                                <span class="icon is-small is-left">
+                                                  <i class="fa fa-user"></i>
+                                                </span>
+                                              </div>
+                                            </div>
+                                            <div class="field">
+                                              <label for="" class="label">Sources d’approvisionnement des intrants</label>
+                                              <div class="control has-icons-left">
+                                                {{ form.SourcApprovisIntran }}
+                                                <span class="icon is-small is-left">
+                                                  <i class="fa fa-user"></i>
+                                                </span>
+                                              </div>
+                                            </div>   <div class="field">
+                                              <label for="" class="label">Sources d’approvisionnement en semences</label>
+                                              <div class="control has-icons-left">
+                                                {{ form.SourcApprovisSemenc }}
+                                                <span class="icon is-small is-left">
+                                                  <i class="fa fa-user"></i>
+                                                </span>
+                                              </div>
+                                            </div>
+                                            <div class="field">
+                                              <label for="" class="label">Sources d’approvisionnement en engrais et produits
+phytosanitaires</label>
+                                              <div class="control has-icons-left">
+                                                {{ form.SourcApprovisEngrProdPhyto  }}
+                                                <span class="icon is-small is-left">
+                                                  <i class="fa fa-user"></i>
+                                                </span>
+                                              </div>
+                                            </div>
+                                            <div class="field">
+                                              <label for="" class="label">Approvisionnent en intrants et matériels agricoles</label>
+                                              <div class="control has-icons-left">
+                                                {{ form.SourcApprovisMatAgro }}
+                                                <span class="icon is-small is-left">
+                                                  <i class="fa fa-user"></i>
+                                                </span>
+                                              </div>
+                                            </div>   <div class="field">
+                                              <label for="" class="label">Type d’acquisition intrants</label>
+                                              <div class="control has-icons-left">
+                                                {{ form.TypeAcquisIntran }}
+                                                <span class="icon is-small is-left">
+                                                  <i class="fa fa-user"></i>
+                                                </span>
+                                              </div>
+                                            </div>
+                                            <div class="field">
+                                              <label for="" class="label">Type d’acquisition matériels</label>
+                                              <div class="control has-icons-left">
+                                                {{ form.TypeAcquisMat }}
+                                                <span class="icon is-small is-left">
+                                                  <i class="fa fa-user"></i>
+                                                </span>
+                                              </div>
+                                            </div>
+                                            <div class="field">
+                                              <label for="" class="label">Type de fertilisants utilisés</label>
+                                              <div class="control has-icons-left">
+                                                {{ form.TypeFertilisUtil }}
+                                                <span class="icon is-small is-left">
+                                                  <i class="fa fa-user"></i>
+                                                </span>
+                                              </div>
+                                            </div>
+
+                                               <div class="field">
+                                              <label for="" class="label">Type de pesticides utilisés</label>
+                                              <div class="control has-icons-left">
+                                                {{ form.TypePesticidUtil }}
+                                                <span class="icon is-small is-left">
+                                                  <i class="fa fa-user"></i>
+                                                </span>
+                                              </div>
+                                            </div>
+
+                                               <div class="field">
+                                              <label for="" class="label">Mode d’acquisition des parcelles</label>
+                                              <div class="control has-icons-left">
+                                                {{ form.ModAcquisParcel }}
+                                                <span class="icon is-small is-left">
+                                                  <i class="fa fa-user"></i>
+                                                </span>
+                                              </div>
+                                            </div>
+
+                                            <input type="submit" class="btn btn-primary" style= "background-color: green" value="Ajouter">
+
+                                          </form>
+
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  
+   {{ fme}}<br/>has Previous:{{ fme.has_previous }}<br/>
+   Current Page:{{ fme.number }}<br/>
+   has next:{{ fme.has_next }}<br/>
+   Number of Pages:{{ fme.paginator.num_page }}<br/>
+                                </section>
+                               <div style =" margin: 0 auto;
+     max-width: 700px;">
+                                 <table class="table table-bordered table-blue" style:align="center">
+                                  <thead>
+                                    <tr>
+                                      <th scope="col">N</th>
+                                      <th scope="col">Zone de production/culture</th>
+                                      <th scope="col">Cultures pratiquées</th>
+                                      <th scope="col">Types de semences</th>
+                                      <th scope="col">CodeVarietesCultiv</th>
+                                       <th scope="col">Variétés cultivées</th>
+                                       <th scope="col">Approvisionnent en intrants et matériels agricoles</th>
+                                       <th scope="col">Sources d’approvisionnement des intrants</th>
+                                      <th scope="col">Sources d’approvisionnement en semences</th>
+                                      <th scope="col">Sources d’approvisionnement en engrais et produits
+phytosanitaires</th>
+                                      <th scope="col">SourcApprovisMatAgro</th>
+                                      <th scope="col">Type d’acquisition intrants</th>
+
+                                      <th scope="col">Type d’acquisition matériels</th>
+                                      <th scope="col">Type de fertilisants utilisés</th>
+                                      <th scope="col">Type de pesticides utilisés</th>
+                                      <th scope="col">Mode d’acquisition des parcelles</th>
+                                       <th scope="col">Update</th>
+                                       <th scope="col">Delete</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    {% for stud in dataObject %}
+                                    <tr>
+                                      <td>{{stud.id}}</td>
+                                      <td>{{stud.ZonProd_Cult}}</td>
+
+                                      <td>{{stud.Cultur_Pratique}}</td>
+
+                                      <td>{{ stud.Type_Semence }}</td>
+
+                                      <td>{{ stud.CodeVarietesCultiv }}</td>
+                                        <td>{{ stud.VarieteCultive }}</td>
+                                      <td>{{ stud.Appro_Intrant_mat }}</td>
+                                      <td>{{ stud.SourcApprovisIntran }}</td>
+                                       <td>{{ stud.SourcApprovisSemenc }}</td>
+                                       <td>{{ stud.SourcApprovisEngrProdPhyto }}</td>
+                                       <td>{{ stud.SourcApprovisMatAgro }}</td>
+
+                                      <td>{{ stud.TypeAcquisIntran }}</td>
+                                      <td>{{ stud.TypeAcquisMat }}</td>
+
+                                      <td>{{ stud.TypeFertilisUtil }}</td>
+
+                                      <td>{{ stud.TypePesticidUtil }}</td>
+                                      <td>{{ stud.ModAcquisParcel }}</td>
+                                      <td><button type="button" class="btn btn-info"><a href="{% url 'das:update_agcl' stud.id %}">Update</a></button></td>
+                                      <td><button type="button" class="btn btn-danger"><a href="{% url 'das:delete_clt' stud.id %}">Delete</a></button></td>
+                                    </tr>
+                                    {% endfor %}
+                                  </tbody>
+                                </table>
+                                </div >
+                        </div>
+
+
+ <style>
+  body {
+    margin: 0;
+    font-family: "Lato", sans-serif;
+  }
+
+.sidebar {
+  margin-top:0px;
+  padding-top:70px;
+  width: 200px;
+  background-color: #258baf;
+  position: fixed;
+  height:100%;
+  overflow: scroll;
+}
+
+  .sidebar a {
+    display: block;
+    color: #ffffff;
+    padding: 16px;
+    text-decoration: none;
+  }
+
+  .sidebar a.active {
+    background-color: #04AA6D;
+    color: white;
+  }
+
+  .sidebar a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+  }
+
+  div.content {
+    margin-left: 200px;
+    padding: 1px 16px;
+    height: 1000px;
+  }
+
+  @media screen and (max-width: 700px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+    .sidebar a {float: left;}
+    div.content {margin-left: 0;}
+  }
+
+  @media screen and (max-width: 400px) {
+    .sidebar a {
+      text-align: center;
+      float: none;
+    }
+  }
+  .mainmenubtn {
+    background-color: #258baf;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding:20px;
+    margin-top:20px;
+
+  }
+
+.mainmenubtn:hover {
+  background-color: blue;
+  }
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+
+}
+.dropdown-child {
+  display: none;
+
+  min-width: 200px;
+}
+.dropdown-child a {
+  color: white;
+  padding: 20px;
+  text-decoration: none;
+  display: block;
+}
+.dropdown:hover .dropdown-child {
+  display: block;
+}
+  </style>
+
+
+
+
+<script>left: 0;}
+}
+
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+}
+
+
+.mainmenubtn {
+  background-color: #258baf;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding:20px;
+  margin-top:20px;
+
+}
+.mainmenubtn:hover {
+  background-color: blue;
+  }
+.dropdown {
+  position: relative;
+  display: inline-block;
+
+}
+.dropdown-child {
+  display: none;
+
+  min-width: 200px;
+}
+.dropdown-child a {
+  color: white;
+  padding: 20px;
+  text-decoration: none;
+  display: block;
+}
+.dropdown:hover .dropdown-child {
+  display: block;
+}
+</style>
+</head>
+
+    {% endblock %}
+</div>
+
+
+    <footer>
+        {% include 'layout/partial/footer.html' %}
+    </footer>
+</body>
+
+
+
+
+
